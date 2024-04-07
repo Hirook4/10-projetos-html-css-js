@@ -1,0 +1,658 @@
+/* Usado para criar variaveis */
+:root {
+  --background: #fff;
+  --foreground: #6e07fe;
+  --primary: #141c3a;
+  --primary-light: #cdd3eb;
+  --primary-foreground: #fff;
+  --secondary: #5be8b9;
+  --secondary-foreground: #141c3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%; /* A declaração font-size: 62.5% no seletor html é uma técnica que define o tamanho da fonte como 62,5% do tamanho padrão do navegador, facilitando o dimensionamento das fontes em relação ao tamanho padrão do navegador.Os navegadores costumam definir o tamanho da fonte em torno de 16 pixels (ou 100% no contexto CSS). Portanto, com font-size: 62.5%; o tamanho-base da fonte se torna 10 pixels (62,5% de 16 pixels). */
+}
+
+x {
+  font-size: 1.5rem; /* Por conta do font-size de cima aqui usamos o valor da fonta em REM, 1.5rem = 15px; */
+}
+
+.container {
+  /* Pega todo espaço disponivel até 1200px */
+  width: 100%;
+  max-width: 1200px;
+  /* Centraliza conteudo */
+  margin: auto;
+}
+
+.button {
+  display: inline-block;
+  border: 0.2rem solid var(--foreground);
+  color: var(--foreground);
+  border-radius: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  transition: all ease 0.2s;
+}
+
+.button:hover {
+  background-color: var(--foreground);
+  color: var(--primary-foreground);
+}
+
+.call {
+  background-color: var(--foreground);
+}
+
+.call .overlay {
+  background-color: var(--background);
+  height: 6rem;
+}
+
+.call .container {
+  margin-top: -6rem;
+}
+
+.call .area {
+  margin: 0 2rem;
+  padding: 4rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 1.5rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.call .area-side {
+  flex: 1;
+}
+
+.call .title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.call .subtitle {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+
+.call .button {
+  font-size: 2rem;
+  color: var(--background);
+  text-decoration: none;
+}
+
+.chat {
+  background-color: var(--foreground);
+  color: var(--primary-foreground);
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.chat .title {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.chat .subtitle {
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.chat .button {
+  border-color: var(--background);
+  color: var(--background);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.chat .button:hover {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.feedbacks {
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.feedbacks .title {
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+.feedbacks .subtitle {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide {
+  max-width: 50rem;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.feedbacks .slide input {
+  display: none;
+}
+
+.feedbacks .slide-area {
+  width: 200%;
+  display: flex;
+  transition: all ease 0.5s;
+}
+
+.feedbacks .slide-item {
+  width: 100%;
+}
+
+.feedbacks .slide-item img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide-item .name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedbacks .slide-item .description {
+  font-size: 2rem;
+  line-height: 3.3rem;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide-item .role {
+  font-size: 1.7rem;
+}
+
+.feedbacks .slide-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.feedbacks .slide-nav label {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0.2rem solid var(--primary-light);
+  transition: all ease 0.5s;
+}
+
+/* Quando o primeiro input estiver marcado, ira buscar nas proximidades (no mesmo nivel na contrução do HTML) dele um .slide-area e aplicar o css nele */
+#slide-1:checked ~ .slide-area {
+  margin-left: 0%;
+}
+
+#slide-2:checked ~ .slide-area {
+  margin-left: -100%;
+}
+
+#slide-1:checked ~ .slide-nav .n1 {
+  background-color: var(--foreground);
+}
+
+#slide-2:checked ~ .slide-nav .n2 {
+  background-color: var(--foreground);
+}
+
+footer {
+  background-color: var(--foreground);
+  color: var(--primary-light);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+footer .logo {
+  width: 4rem;
+  height: auto;
+  margin-bottom: 4rem;
+  border-radius: 30%;
+}
+
+footer .title {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  margin-bottom: 4rem;
+}
+
+footer .social {
+  display: flex;
+  justify-content: space-between;
+  max-width: 40rem;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+footer .social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--primary-light);
+}
+
+footer .social a img {
+  width: 2rem;
+  height: 2rem;
+}
+
+footer .social a:hover {
+  opacity: 0.8;
+}
+
+footer .copyright {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+footer .legal {
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+}
+
+.logo img {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 30%;
+}
+
+.menu-opener {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: pointer;
+}
+
+.menu-opener span {
+  display: block;
+  width: 2rem;
+  height: 0.1rem;
+  background-color: var(--primary);
+}
+
+header nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+header nav a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+header nav.opened {
+  display: flex;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.hero h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero-avatar {
+  display: block;
+  width: 12rem;
+  height: auto;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.hero-device {
+  display: block;
+  width: 100%;
+  max-width: 80rem;
+  height: auto;
+  margin: auto;
+}
+
+.intro {
+  background-color: var(--foreground);
+  color: var(--primary-foreground);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.intro .box {
+  max-width: 60rem;
+  margin: auto;
+  padding: 2rem;
+}
+
+.intro .title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.intro .subtitle {
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.skills-overlay {
+  background-color: var(--foreground);
+  height: 10rem;
+}
+
+.skills .container {
+  margin-top: -10rem;
+}
+
+/* Usando display grid */
+.skills .grid {
+  background-color: var(--background);
+  margin: 0 2rem;
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 3px 5px var(--primary-light);
+}
+
+.skills .skill {
+  text-align: center;
+  border-right: 0;
+  border-bottom: 1px solid var(--primary-light); /* Pensando no site em mobile first */
+  color: var(--primary);
+  padding: 5rem 2rem;
+}
+
+.skills .skill:last-child {
+  border-right: 0;
+  border-bottom: 0;
+}
+
+/* Skill Item */
+.skill-icon {
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  margin: auto;
+}
+
+.skill-icon img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.skill-title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 3rem 0;
+}
+
+.skill-desc {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+
+.skill-sub {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: var(--foreground);
+}
+
+.skill-txt {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+
+.worked-with {
+  border-top: 1px solid var(--primary-light);
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.worked-with .title {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.worked-with .grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.worked-with .grid img {
+  width: 100%;
+}
+
+.works {
+  text-align: center;
+  color: var(--primary);
+  padding: 0 2rem;
+}
+
+.works .title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 8rem;
+  margin-bottom: 3.5rem;
+}
+
+.works .subtitle {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.works .subtitle a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.works .subtitle a:hover {
+  text-decoration: underline;
+}
+
+.works .grid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* GRID ITEM */
+.works .item {
+  /* relative pois o overlay sera absolute e ele ficara grudado em todas as laterais do item pai, se nao colocar como relative ele vai grudar nas laterais da tela*/
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.works .item .image {
+  width: 100%;
+  height: auto;
+  transition: all ease 0.5s; /*Tempo da animação*/
+}
+
+.works .item .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 2rem;
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  transition: all ease 0.5s; /*Tempo da animação*/
+  opacity: 0; /*Deixar overlay opaco*/
+}
+
+.works .item .overlay .button {
+  margin-top: 2rem;
+  color: var(--primary-foreground);
+  text-decoration: none;
+}
+
+/*Pequeno zoom na imagem ao passar mouse em cima, por conta do overflow: hidden a imagem não sei pra fora do quadro*/
+.works .item:hover .image {
+  transform: scale(1.2);
+}
+
+/* Mostrar o overlay quando passar o mouse em cima */
+.works .item:hover .overlay {
+  opacity: 1;
+}
+
+.works .seemore {
+  margin: 6rem 0;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* MEDIA */
+@media (width > 600px) {
+  .chat .title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .chat .subtitle {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  header {
+    flex-direction: row;
+  }
+
+  .menu-opener {
+    display: none;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero-avatar {
+    width: 20rem;
+  }
+
+  .intro .title {
+    font-size: 3rem;
+  }
+
+  .skills .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skills .skill {
+    border-bottom: 0;
+    border-right: 1px solid var(--primary-light);
+  }
+
+  .worked-with .title {
+    font-size: 3.5rem;
+    list-style: 4rem;
+  }
+
+  .worked-with .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .works .title {
+    font-size: 3.5rem;
+  }
+
+  .works .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 900px) {
+  .call .area {
+    flex-direction: row;
+  }
+
+  .worked-with .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .works .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

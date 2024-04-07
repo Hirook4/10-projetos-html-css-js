@@ -1,0 +1,101 @@
+.works {
+  text-align: center;
+  color: var(--primary);
+  padding: 0 2rem;
+}
+
+.works .title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 8rem;
+  margin-bottom: 3.5rem;
+}
+
+.works .subtitle {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.works .subtitle a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.works .subtitle a:hover {
+  text-decoration: underline;
+}
+
+.works .grid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (width > 600px) {
+  .works .title {
+    font-size: 3.5rem;
+  }
+
+  .works .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 900px) {
+  .works .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* GRID ITEM */
+.works .item {
+  /* relative pois o overlay sera absolute e ele ficara grudado em todas as laterais do item pai, se nao colocar como relative ele vai grudar nas laterais da tela*/
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.works .item .image {
+  width: 100%;
+  height: auto;
+  transition: all ease 0.5s; /*Tempo da animação*/
+}
+
+.works .item .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 2rem;
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  transition: all ease 0.5s; /*Tempo da animação*/
+  opacity: 0; /*Deixar overlay opaco*/
+}
+
+.works .item .overlay .button {
+  margin-top: 2rem;
+  color: var(--primary-foreground);
+  text-decoration: none;
+}
+
+/*Pequeno zoom na imagem ao passar mouse em cima, por conta do overflow: hidden a imagem não sei pra fora do quadro*/
+.works .item:hover .image {
+  transform: scale(1.2);
+}
+
+/* Mostrar o overlay quando passar o mouse em cima */
+.works .item:hover .overlay {
+  opacity: 1;
+}
+
+.works .seemore {
+  margin: 6rem 0;
+  font-size: 2rem;
+  text-decoration: none;
+}

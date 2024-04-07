@@ -1,0 +1,52 @@
+.call {
+  background-color: var(--foreground);
+}
+
+.call .overlay {
+  background-color: var(--background);
+  height: 6rem;
+}
+
+.call .container {
+  margin-top: -6rem;
+}
+
+.call .area {
+  margin: 0 2rem;
+  padding: 4rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 1.5rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.call .area-side {
+  flex: 1;
+}
+
+.call .title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.call .subtitle {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+
+.call .button {
+  font-size: 2rem;
+  color: var(--background);
+  text-decoration: none;
+}
+
+@media (width > 900px) {
+  .call .area {
+    flex-direction: row;
+  }
+}

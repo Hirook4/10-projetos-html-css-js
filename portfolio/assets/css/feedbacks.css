@@ -1,0 +1,96 @@
+.feedbacks {
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.feedbacks .title {
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+.feedbacks .subtitle {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide {
+  max-width: 50rem;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.feedbacks .slide input {
+  display: none;
+}
+
+.feedbacks .slide-area {
+  width: 200%;
+  display: flex;
+  transition: all ease 0.5s;
+}
+
+.feedbacks .slide-item {
+  width: 100%;
+}
+
+.feedbacks .slide-item img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide-item .name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedbacks .slide-item .description {
+  font-size: 2rem;
+  line-height: 3.3rem;
+  margin-bottom: 4rem;
+}
+
+.feedbacks .slide-item .role {
+  font-size: 1.7rem;
+}
+
+.feedbacks .slide-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.feedbacks .slide-nav label {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0.2rem solid var(--primary-light);
+  transition: all ease 0.5s;
+}
+
+/* Quando o primeiro input estiver marcado, ira buscar nas proximidades (no mesmo nivel na contrução do HTML) dele um .slide-area e aplicar o css nele */
+#slide-1:checked ~ .slide-area {
+  margin-left: 0%;
+}
+
+#slide-2:checked ~ .slide-area {
+  margin-left: -100%;
+}
+
+#slide-1:checked ~ .slide-nav .n1 {
+  background-color: var(--foreground);
+}
+
+#slide-2:checked ~ .slide-nav .n2 {
+  background-color: var(--foreground);
+}

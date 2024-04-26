@@ -1,4 +1,4 @@
-10 projetos.
+10 projetos. <br>
 Todos os projetos são responsivos e estão usando o conceito de Mobile First.
 
 <div align="center">

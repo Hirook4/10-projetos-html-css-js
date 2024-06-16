@@ -1,0 +1,79 @@
+.feed {
+  padding-bottom: 2rem;
+}
+
+.feed .item .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.feed .item .header .icon {
+  cursor: pointer;
+}
+
+.feed .item .header .avatar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.feed .item .header .avatar img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.feed .item .header .avatar span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.feed .item .body img {
+  width: 100%;
+  height: auto;
+}
+
+.feed .item .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.feed .item .buttons .icon {
+  cursor: pointer;
+}
+
+.feed .item .buttons .left,
+.feed .item .buttons .right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feed .item .likes {
+  padding: 0 1rem;
+}
+
+.feed .item .likes span {
+  font-weight: bold;
+}
+
+.feed .item .comments {
+  padding: 1rem;
+}
+
+.feed .item .comments span {
+  font-weight: bold;
+}
+
+.feed .item .info {
+  color: var(--secondary-foreground);
+  font-size: 1.3rem;
+  padding: 0 1rem;
+}

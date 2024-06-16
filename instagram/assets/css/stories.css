@@ -1,0 +1,75 @@
+.stories {
+  width: 100%;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.stories .scroll {
+  display: flex;
+  gap: 2rem;
+}
+
+.stories .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stories .item .avatar {
+  width: 6.5rem;
+  height: 6.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--story-color1) 0%,
+    var(--story-color2) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stories .item .avatar img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+}
+
+.stories .item p {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.story-left,
+.story-right {
+  position: absolute;
+  width: 3rem;
+  height: 6.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.story-left .icon-area,
+.story-right .icon-area {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.story-left {
+  left: 1rem;
+}
+
+.story-right {
+  right: 1rem;
+}

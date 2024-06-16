@@ -1,0 +1,125 @@
+aside a {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--side-link);
+}
+
+aside a:hover {
+  color: var(--primary);
+}
+
+aside .user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+aside .user-avatar {
+  border: 2px solid var(--secondary-foreground);
+  border-radius: 50%;
+  padding: 0.2rem;
+  /* Flex para colocar a imagem mesmo no meio do conteudo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside .user-avatar img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+aside .user-info {
+  flex: 1;
+  /* ... no nome quando for muito grande */
+  overflow-x: hidden;
+}
+
+aside .user-username {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  /* ... no nome quando for muito grande */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+aside .user-name {
+  color: var(--secondary-foreground);
+  font-size: 1.5rem;
+  /* ... no nome quando for muito grande */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+aside .card {
+  margin-top: 2rem;
+}
+
+aside .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside .card-title {
+  color: var(--secondary-foreground);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+aside .card-actions a {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+aside .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin: 1.5rem 0;
+}
+
+aside .suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+aside .suggestion-avatar img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+aside .suggestion-info {
+  flex: 1;
+}
+
+aside .suggestion-name {
+  /* block para conseguir dar um margin */
+  display: block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+  /* ... no nome quando for muito grande */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+aside .suggestion-text {
+  /* block para conseguir dar um margin */
+  display: block;
+  font-size: 1.4rem;
+  color: var(--secondary-foreground);
+  /* ... no nome quando for muito grande */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
